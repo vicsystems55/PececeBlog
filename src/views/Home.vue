@@ -2,7 +2,7 @@
   <div>
 
     <!-- Page loading -->
-    <div id="loading">
+    <div id="loading d-none">
         <div class="spinner-grow"></div>
     </div>
     <!-- * Page loading -->
