@@ -8,13 +8,13 @@
     <!-- App Header -->
     <div class="appHeader">
         <div class="left">
-            <a href="javascript:;" class="icon goBack">
+            <router-link to="/" class="icon goBack">
                 <i class="icon ion-ios-arrow-back"></i>
-            </a>
+            </router-link>
         </div>
         <div class="pageTitle">Register</div>
         <div class="right">
-            <a href="page-login.html" class="link">Login</a>
+            <router-link to="/login" class="link">Login</router-link>
         </div>
     </div>
     <!-- searchBox -->
@@ -69,3 +69,10 @@
     </div>
     <!-- appCapsule -->
 </template>
+<script>
+export default {
+    mounted(){
+        
+    }
+}
+</script>

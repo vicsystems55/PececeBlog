@@ -8,13 +8,13 @@
     <!-- App Header -->
     <div class="appHeader">
         <div class="left">
-            <a href="javascript:;" class="icon goBack">
+            <router-link to="/" class="icon goBack">
                 <i class="icon ion-ios-arrow-back"></i>
-            </a>
+            </router-link>
         </div>
         <div class="pageTitle">Login</div>
         <div class="right">
-            <a href="page-register.html" class="link">Register</a>
+            <router-link to="/register" class="link">Register</router-link>
         </div>
     </div>
     <!-- searchBox -->

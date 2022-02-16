@@ -2,7 +2,7 @@
   <div>
 
     <!-- Page loading -->
-    <div id="loading d-none">
+    <div id="loading">
         <div class="spinner-grow"></div>
     </div>
     <!-- * Page loading -->
@@ -47,7 +47,7 @@
                     <ul class="splide__list">
                         <!-- slide -->
                         <li class="splide__slide">
-                            <a href="blog-post.html" class="card card-overlay text-white">
+                            <router-link to="/post" class="card card-overlay text-white">
                                 <img src="assets/img/sample/photo8.jpg" class="card-img img-fluid" alt="image">
                                 <div class="card-img-overlay">
                                     <div class="header row">
@@ -69,7 +69,7 @@
                                         </footer>
                                     </div>
                                 </div>
-                            </a>
+                            </router-link>
                         </li>
                         <!-- * slide -->
                         <!-- slide -->
@@ -506,24 +506,24 @@
 
 
     <!-- App Bottom Menu -->
-    <div class="appBottomMenu">
+    <div style="color: orange;" class="appBottomMenu">
         <div class="item">
             <a href="index.html">
                 <p>
-                    <i class="icon ion-ios-water"></i>
+                    <i  class="icon ion-ios-home"></i>
                     <span>Home</span>
                 </p>
             </a>
         </div>
         <div class="item">
-            <a href="pages.html">
+            <router-link to="/profile">
                 <p>
-                    <i class="icon ion-ios-apps"></i>
-                    <span>Pages</span>
+                    <i class="icon ion-ios-contact"></i>
+                    <span>Profile</span>
                 </p>
-            </a>
+            </router-link>
         </div>
-        <div class="item">
+        <div class="item d-none">
             <a href="components.html">
                 <p>
                     <i class="icon ion-ios-analytics"></i>
@@ -600,14 +600,14 @@
                             </a>
                         </li>
                         <li>
-                            <a href="page-login.html">
+                            <router-link to="/login">
                                 <i class="icon ion-ios-lock"></i>
                                 Login
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
-                <div class="sidebarGroup">
+                <div class="sidebarGroup d-none">
                     <ul class="sidebarMenu">
                         <li class="title">Online</li>
                         <li>
@@ -652,7 +652,9 @@
 
 <script>
 export default {
-    beforeRouteEnter () {
+    mounted () {
+
+        // alert('ehllo')
 
         if (localStorage.getItem('reloaded')) {
         // The page was just reloaded. Clear the value from local storage
