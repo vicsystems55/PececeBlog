@@ -55,17 +55,16 @@
                 <div v-for="post in posts" :key="post.index" class="content">
 
                     <h1 class="title-lg mt-2 mb-2">
-                        {{post.title}}
+                        {{post.post_title}}
                     </h1>
 
                     <figure>
-                        <img src="assets/img/sample/photo3.jpg" alt="image">
+                        <img :src="post.featured_image" alt="image">
                         
                     </figure>
 
                     <p>
-                        Aenean lorem odio, mollis sed consequat et, pellentesque id purus. Nunc sagittis malesuada urna,
-                        ultricies lacinia nisi varius vitae. Aliquam sit amet egestas sapien, nec mollis quam.
+                        {{post.post_description.substring(0, 200) + '...'}}
                     </p>
 
                 </div>
@@ -240,7 +239,7 @@ export default {
     methods: {
         getPosts(){
 
-            alert('new')
+            // alert('new')
 
              this.axios({
                 url: process.env.VUE_APP_URL+'/api/posts',
