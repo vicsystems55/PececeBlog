@@ -47,7 +47,7 @@
                     <ul class="splide__list">
                         <!-- slide -->
                         <li class="splide__slide">
-                            <router-link to="/post" class="card card-overlay text-white">
+                            <router-link to="/posts" class="card card-overlay text-white">
                                 <img src="assets/img/sample/photo8.jpg" class="card-img img-fluid" alt="image">
                                 <div class="card-img-overlay">
                                     <div class="header row">
