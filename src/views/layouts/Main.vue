@@ -470,32 +470,7 @@
         </div>
 
         <!-- app Footer -->
-        <footer class="appFooter d-none">
-            <div class="heading">Copyright © Bitter. All Rights Reserved.</div>
-            <p>
-                Modern, simple and elegant design for mobile devices. Based on Bootstrap.
-            </p>
-            <!-- facebook -->
-            <a href="#" class="btn btn-facebook btn-icon me-1">
-                <i class="icon ion-logo-facebook"></i>
-            </a>
-            <!-- twitter -->
-            <a href="#" class="btn btn-twitter btn-icon me-1">
-                <i class="icon ion-logo-twitter"></i>
-            </a>
-            <!-- instagram -->
-            <a href="#" class="btn btn-instagram btn-icon me-1">
-                <i class="icon ion-logo-instagram"></i>
-            </a>
-            <!-- linkedin -->
-            <a href="#" class="btn btn-linkedin btn-icon me-1">
-                <i class="icon ion-logo-linkedin"></i>
-            </a>
-            <!-- whatsapp -->
-            <a href="#" class="btn btn-whatsapp btn-icon me-1">
-                <i class="icon ion-logo-whatsapp"></i>
-            </a>
-        </footer>
+     
         <!-- * app Footer -->
 
 

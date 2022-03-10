@@ -3,6 +3,8 @@ import Home from '../views/Home.vue'
 
 import Post from '../views/Post.vue'
 
+import Posts from '../views/Posts.vue'
+
 import Profile from '../views/Profile.vue'
 
 import Login from '../views/Login.vue'
@@ -20,6 +22,12 @@ const routes = [
     path: '/post',
     name: 'Post',
     component: Post
+  },
+
+  {
+    path: '/posts',
+    name: 'Posts',
+    component: Posts
   },
 
   {
