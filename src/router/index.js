@@ -13,13 +13,19 @@ import Register from '../views/Register.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/h',
     name: 'Home',
     component: Home
   },
 
   {
-    path: '/post',
+    path: '/',
+    name: 'Post',
+    component: Post
+  },
+
+  {
+    path: '/post/:id',
     name: 'Post',
     component: Post
   },

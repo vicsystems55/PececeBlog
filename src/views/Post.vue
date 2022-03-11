@@ -1,8 +1,8 @@
 <template>
     <!-- Page loading -->
-    <div id="loading d-none">
+    <!-- <div id="loading d-none">
         <div class="spinner-grow"></div>
-    </div>
+    </div> -->
     <!-- * Page loading -->
 
     <!-- App Header -->
@@ -41,7 +41,7 @@
 
             <!-- title -->
             <h1 class="title-lg mt-2 mb-2">
-                The World's Largest Pillow Fight is Also a Festival
+                {{post.post_title}}
             </h1>
             <!-- * title -->
 
@@ -60,40 +60,16 @@
             <!-- post body -->
             <div class="postBody">
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula efficitur, accumsan magna
-                    vitae, lobortis turpis.
-                </p>
+               
 
                 <figure>
-                    <img src="assets/img/sample/photo4.jpg" alt="image">
+                    <img :src="post.featured_image" alt="image">
                 </figure>
 
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras a
-                    sem lacinia, cursus elit eu, tempor mi. Pellentesque nec semper nulla, in rhoncus metus. Etiam nisl
-                    nisi, fermentum eu massa sit amet, euismod iaculis tellus.
-                </p>
-                <p>
-                    Donec luctus, nibh id scelerisque mattis,
-                    nunc enim dignissim felis, et interdum urna magna non nibh. Mauris id mi et purus consequat laoreet.
-                    Aenean ullamcorper lobortis neque, non pulvinar purus. Aenean id feugiat orci. Nulla quis mattis
-                    erat. Aenean et consectetur purus. Nullam volutpat venenatis volutpat. Nulla facilisi.
-                </p>
-
-                <figure>
-                    <img src="assets/img/sample/photo3.jpg" alt="image">
-                    <figcaption>
-                        Aenean lorem odio, mollis sed consequat et, pellentesque id purus. Nunc sagittis malesuada
-                        urna...
-                    </figcaption>
-                </figure>
-
-                <p>
-                    Aenean lorem odio, mollis sed consequat et, pellentesque id purus. Nunc sagittis malesuada urna,
-                    ultricies lacinia nisi varius vitae. Aliquam sit amet egestas sapien, nec mollis quam.
-                </p>
+                <div v-html="post.post_body">
+                   
+                </div>
+               
 
             </div>
             <!-- * post body -->
@@ -272,24 +248,24 @@
 
 
     <!-- App Bottom Menu -->
-    <div class="appBottomMenu">
+    <div style="color: orange;" class="appBottomMenu">
         <div class="item">
-            <a href="index.html">
+            <router-link to="/">
                 <p>
-                    <i class="icon ion-ios-water"></i>
+                    <i  class="icon ion-ios-home"></i>
                     <span>Home</span>
                 </p>
-            </a>
+            </router-link>
         </div>
         <div class="item">
-            <a href="pages.html">
+            <router-link to="/profile">
                 <p>
-                    <i class="icon ion-ios-apps"></i>
-                    <span>Pages</span>
+                    <i class="icon ion-ios-contact"></i>
+                    <span>Profile</span>
                 </p>
-            </a>
+            </router-link>
         </div>
-        <div class="item">
+        <div class="item d-none">
             <a href="components.html">
                 <p>
                     <i class="icon ion-ios-analytics"></i>
@@ -415,3 +391,42 @@
     </div>
     <!-- * Sidebar Menu -->
 </template>
+<script>
+    export default {
+    data() {
+        return {
+            post: []
+        }
+    },
+
+    methods: {
+        getPosts(){
+
+            // alert('new')
+
+             this.axios({
+                url: process.env.VUE_APP_URL+'/api/posts',
+                method: 'get',
+                params:{
+                    post_id: this.$route.params.id
+                }
+            })
+            .then((response)=>{
+
+                this.post = response.data
+
+                console.log(response)
+            })
+            .catch((response)=>{
+
+                console.log(response)
+            })
+
+
+        }
+    },
+    mounted() {
+        this.getPosts()
+    },
+}
+</script>

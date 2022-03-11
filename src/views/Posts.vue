@@ -1,8 +1,8 @@
 <template>
     <!-- Page loading -->
-    <div id="loading d-none">
+    <!-- <div id="loading d-none">
         <div class="spinner-grow"></div>
-    </div>
+    </div> -->
     <!-- * Page loading -->
 
     <!-- App Header -->
@@ -54,14 +54,26 @@
 
                 <div v-for="post in posts" :key="post.index" class="content">
 
-                    <h1 class="title-lg mt-2 mb-2">
+                    <router-link :to="{name:'Post',params:{id:post.id} }">
+                        <h1 class="title-lg mt-2 mb-2">
                         {{post.post_title}}
                     </h1>
+                    </router-link>
 
                     <figure>
                         <img :src="post.featured_image" alt="image">
                         
                     </figure>
+
+                     <div class="postHeader mb-2">
+                        <div>
+                            <a href="#" class="badge badge-primary">{{post.post_categories.name}}</a>
+                        </div>
+                        <div>
+                            <img src="assets/img/sample/avatar2.jpg" alt="avatar" class="avatar">
+                            25 Sep 2019
+                        </div>
+                    </div>
 
                     <p>
                         {{post.post_description.substring(0, 200) + '...'}}
@@ -84,24 +96,24 @@
 
 
     <!-- App Bottom Menu -->
-    <div class="appBottomMenu">
+    <div style="color: orange;" class="appBottomMenu">
         <div class="item">
-            <a href="index.html">
+            <router-link to="/">
                 <p>
-                    <i class="icon ion-ios-water"></i>
+                    <i  class="icon ion-ios-home"></i>
                     <span>Home</span>
                 </p>
-            </a>
+            </router-link>
         </div>
         <div class="item">
-            <a href="pages.html">
+            <router-link to="/profile">
                 <p>
-                    <i class="icon ion-ios-apps"></i>
-                    <span>Pages</span>
+                    <i class="icon ion-ios-contact"></i>
+                    <span>Profile</span>
                 </p>
-            </a>
+            </router-link>
         </div>
-        <div class="item">
+        <div class="item d-none">
             <a href="components.html">
                 <p>
                     <i class="icon ion-ios-analytics"></i>
@@ -229,7 +241,7 @@
 </template>
 
 <script>
-export default {
+    export default {
     data() {
         return {
             posts: []
