@@ -5,6 +5,8 @@ import Post from '../views/Post.vue'
 
 import Posts from '../views/Posts.vue'
 
+import Postx from '../views/Posts.vue'
+
 import Profile from '../views/Profile.vue'
 
 import Login from '../views/Login.vue'
@@ -12,18 +14,18 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 
 const routes = [
+  
+  {
+    path: '/',
+    name: 'Postx',
+    component: Postx
+  },
+  
   {
     path: '/h',
     name: 'Home',
     component: Home
   },
-
-  {
-    path: '/',
-    name: 'Posts',
-    component: Posts
-  },
-
   {
     path: '/post/:id',
     name: 'Post',
