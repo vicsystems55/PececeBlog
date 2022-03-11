@@ -100,7 +100,7 @@
         <div class="item">
             <router-link to="/">
                 <p>
-                    <i  class="icon ion-ios-home"></i>
+                    <i style="color: orange;" class="icon ion-ios-home"></i>
                     <span>Home</span>
                 </p>
             </router-link>
