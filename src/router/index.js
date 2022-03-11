@@ -20,8 +20,8 @@ const routes = [
 
   {
     path: '/',
-    name: 'Post',
-    component: Post
+    name: 'Posts',
+    component: Posts
   },
 
   {
