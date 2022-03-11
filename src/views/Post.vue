@@ -252,7 +252,7 @@
         <div class="item">
             <router-link to="/">
                 <p>
-                    <i  class="icon ion-ios-home"></i>
+                    <i style="color: #FF6C27;" class="icon ion-ios-home"></i>
                     <span>Home</span>
                 </p>
             </router-link>
@@ -260,7 +260,7 @@
         <div class="item">
             <router-link to="/profile">
                 <p>
-                    <i class="icon ion-ios-contact"></i>
+                    <i style="color: #FF6C27;" class="icon ion-ios-contact"></i>
                     <span>Profile</span>
                 </p>
             </router-link>
@@ -268,7 +268,7 @@
         <div class="item d-none">
             <a href="components.html">
                 <p>
-                    <i class="icon ion-ios-analytics"></i>
+                    <i style="color: #FF6C27;" class="icon ion-ios-analytics"></i>
                     <span>Components</span>
                 </p>
             </a>
@@ -276,7 +276,7 @@
         <div class="item">
             <a href="search.html">
                 <p>
-                    <i class="icon ion-ios-search"></i>
+                    <i style="color: #FF6C27;" class="icon ion-ios-search"></i>
                     <span>Search</span>
                 </p>
             </a>
